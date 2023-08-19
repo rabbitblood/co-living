@@ -190,6 +190,7 @@ form .submit-button{
 .mind-img{
     display: block;
     position: absolute;
+    margin-bottom: 50px;
     top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
