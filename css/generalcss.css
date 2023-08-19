@@ -177,6 +177,22 @@ form .submit-button{
     color: #fff;
     cursor: pointer;
 }
+.mind-img{
+    display: block;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    min-width: 300px;
+    max-width: 800px;
+    min-height: 500px;
+    border-radius: 5px;
+    padding: 20px;
+    transition: all 0.5s ease-in-out;
+    z-index: 0;
+    opacity: 0.85;
+}
 
 /* floating effect for .brand-name and h1 */
 @keyframes floating {
