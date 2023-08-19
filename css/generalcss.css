@@ -112,7 +112,6 @@ p{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,13 +119,13 @@ p{
 
 form{
     display: block;
-    position: absolute;
     width: 100%;
     height: 100vh;
     min-width: 300px;
     max-width: 800px;
     min-height: 300px;
     max-height: 800px;
+    margin: 50px auto;
     height: min-content;
     background: #fff;
     border-radius: 5px;
