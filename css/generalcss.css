@@ -194,9 +194,7 @@ form .submit-button{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    min-width: 300px;
     max-width: 800px;
-    min-height: 500px;
     border-radius: 5px;
     padding: 20px;
     transition: all 0.5s ease-in-out;
