@@ -37,10 +37,6 @@ renderer.setSize(bg.clientWidth, bg.clientHeight);
 renderer.setClearColor("#000000", 0);
 document.body.appendChild(renderer.domElement);
 
-//sphere
-const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
-const sphere = new THREE.Mesh(sphereGeometry, materialStandard);
-
 
 //light
 const light1 = new THREE.PointLight("red", 1, 50);
@@ -101,21 +97,8 @@ document.addEventListener("scroll", function (e) {
         star.scrollY(window.scrollY - lastScrollPos);
     }
 
-    sphere.position.y += (window.scrollY - lastScrollPos) * 0.005;
-    sphere.position.z += (window.scrollY - lastScrollPos) * 0.01;
-
     lastScrollPos = window.scrollY;
 
-
-    //profile text
-    if (profileText.getClientRects()[0].top - window.innerHeight < -200 &&
-        profileText.getClientRects()[0].bottom > 200) {
-        profileText.style.opacity = 1;
-        profileText.style.transform = "translateX(0)";
-    } else {
-        profileText.style.opacity = 0;
-        profileText.style.transform = "translateX(-100px)";
-    }
 });
 
 
