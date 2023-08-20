@@ -7,7 +7,6 @@ import { FBXLoader } from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/j
 //data
 let lastScrollPos = 0;
 let stars = [];
-const colorTemplate = ["#ff6e27", "#fbf665", "#73fffe", "#6287f8", "#383e65"]
 
 //elements
 const bg = document.querySelector('#bg');
