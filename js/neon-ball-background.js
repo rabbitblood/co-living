@@ -25,7 +25,7 @@ const texture = textureLoader.load('./../image/hw.png');
 
 //material
 const materialBasic = new THREE.MeshBasicMaterial({ color: "#fbf665", wireframe: true });
-const materialStandard = new THREE.MeshStandardMaterial({ color: "#000000" });
+const materialStandard = new THREE.MeshStandardMaterial({ color: "#673147" });
 materialStandard.roughness = 0.5;
 materialStandard.normalMap = texture;
 
@@ -34,18 +34,18 @@ materialStandard.normalMap = texture;
 const renderer = new THREE.WebGLRenderer({ canvas: bg });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(bg.clientWidth, bg.clientHeight);
-renderer.setClearColor("#000000", 0);
+renderer.setClearColor("#673147", 0);
 document.body.appendChild(renderer.domElement);
 
 
 //light
-const light1 = new THREE.PointLight("red", 1, 50);
+const light1 = new THREE.PointLight("#AA336A", 1, 50);
 light1.intensity = 100;
 light1.position.set(20, 5, 5);
 scene.add(light1);
 
-const light2 = new THREE.PointLight("purple", 1, 50);
-light2.intensity = 140;
+const light2 = new THREE.PointLight("#F89880", 1, 50);
+light2.intensity = 170;
 light2.position.set(-20, 15, 5);
 scene.add(light2);
 
