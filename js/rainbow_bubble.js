@@ -83,7 +83,7 @@ function circle() {
         this.lastUpdate = Date.now();
         this.set_new_destination();
         this.move()
-        this.color = `rgba(${r() * 255},${r() * 0},${r() * 255},${1})`;
+        this.color = `rgba(${r() * 100 + 150},${r() * 100 + 90},${r() * 100 + 150},${1})`;
     }
 
     this.move = function () {
