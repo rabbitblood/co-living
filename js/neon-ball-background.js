@@ -37,12 +37,12 @@ document.body.appendChild(renderer.domElement);
 
 //light
 const light1 = new THREE.PointLight(VARIABLES.leftLight, 1, 50);
-light1.intensity = 40;
+light1.intensity = 100;
 light1.position.set(20, 5, 5);
 scene.add(light1);
 
 const light2 = new THREE.PointLight(VARIABLES.rightLight, 1, 50);
-light2.intensity = 40;
+light2.intensity = 170;
 light2.position.set(-20, 5, 5);
 scene.add(light2);
 
