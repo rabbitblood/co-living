@@ -1,3 +1,6 @@
+//variables
+
+
 //canvas part
 document.querySelector("body").innerHTML += '<canvas \
                                             id="bubble" \

@@ -1,9 +1,6 @@
 import * as THREE from './three.module.js';
 import * as star from './star.js';
-
-
-//variables
-const starCount = 500;
+import * as VARIABLES from './variables.js';
 
 //data
 let lastScrollPos = 0;
@@ -39,14 +36,14 @@ document.body.appendChild(renderer.domElement);
 
 
 //light
-const light1 = new THREE.PointLight("#AA336A", 1, 50);
-light1.intensity = 100;
+const light1 = new THREE.PointLight(VARIABLES.leftLight, 1, 50);
+light1.intensity = 40;
 light1.position.set(20, 5, 5);
 scene.add(light1);
 
-const light2 = new THREE.PointLight("#F89880", 1, 50);
-light2.intensity = 170;
-light2.position.set(-20, 15, 5);
+const light2 = new THREE.PointLight(VARIABLES.rightLight, 1, 50);
+light2.intensity = 40;
+light2.position.set(-20, 5, 5);
 scene.add(light2);
 
 const light3 = new THREE.PointLight("white", 1, 10);
@@ -82,7 +79,7 @@ function init() {
 
 
 function addStars() {
-    for (let i = 0; i < starCount; i++) {
+    for (let i = 0; i < VARIABLES.starCount; i++) {
         stars.push(new star.star(scene));
     }
 
