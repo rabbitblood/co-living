@@ -1,4 +1,12 @@
+@font-face {
+    font-family: "Dogica";
+    src: url("./../fonts/dogica/OTF/dogicapixelbold.otf");
 
+}
+
+h2,.brand-name{
+    font-family: "Dogica";
+}
 
 *{
     margin: 0;
@@ -38,6 +46,7 @@ a{
     animation: floating-h1 3s ease-in-out infinite;
     z-index: 5;
 }
+
 
 h2{
     font-size: 3em;
