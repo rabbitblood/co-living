@@ -46,11 +46,6 @@ light2.intensity = 170;
 light2.position.set(-20, 5, 5);
 scene.add(light2);
 
-const light3 = new THREE.PointLight("white", 1, 10);
-light3.intensity = 100;
-light3.position.set(10, -10, -40);
-scene.add(light3);
-
 //control
 camera.position.z = 5;
 
@@ -108,3 +103,71 @@ function animate() {
     }
 
 }
+
+//moving lines
+// general setup, boring, skip to the next comment
+
+// renderer.setSize( innerWidth, innerHeight );
+// renderer.setAnimationLoop( animationLoop );
+// document.body.appendChild( renderer.domElement );
+        
+
+// // next comment
+
+// const N = 20; // number of vertices in a line
+// const L = 150; // number of lines
+
+// var colors = [],
+//     color = new THREE.Color();
+// for( var i=0; i<N; i++ )
+// {
+//     color.setHSL( 0.8, 0.4, 1 );
+//     colors.push( 0.6, 0.3, 0.3 );
+// }
+
+// var material = new THREE.LineBasicMaterial( {
+//             vertexColors: true,
+//             blending: THREE.AdditiveBlending,
+//             transparent: true,
+//     } );
+
+// var geometry, line, lines = [];
+// for( var i=0; i<L; i++ )
+// {
+//     geometry = new THREE.BufferGeometry();
+//     geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( colors, 3 ));
+//     geometry.setAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ));
+
+//     line = new THREE.Line( geometry, material );
+//     line.pos = geometry.getAttribute( 'position' );
+//     line.rnd = Math.random();
+
+//     lines.push( line );
+// }
+// scene.add( ...lines );
+
+
+// function path( buf, t, i, rnd )
+// {
+//     t += 10*rnd;
+
+//     var x = (0.1+3*rnd)*Math.sin(t+13*rnd) + 2*rnd*Math.cos(3.2*t+3);
+//     var y = (3-3*rnd)*Math.cos(t) + 2*rnd*Math.cos(4.5*t-7*rnd);
+//     var z = (30*rnd**20)*Math.sin(2.7*t-4*rnd);
+//     buf.setXYZ( i, x, y, z );
+// }
+
+
+// function animationLoop( t )
+// {
+    
+//     for( var line of lines )
+//     {
+//             for( var i=0; i<N; i++ )
+//                 path( line.pos, t/3000-i/50, i, line.rnd );
+        
+//             line.pos.needsUpdate = true;
+//     }
+
+// renderer.render( scene, camera );
+// }
