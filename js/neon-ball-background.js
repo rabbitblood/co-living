@@ -3,6 +3,7 @@ import * as star from './star.js';
 import * as VARIABLES from './variables.js';
 import { GLTFLoader } from './GLTFLoader.js';
 import { DRACOLoader } from './DRACOLoader.js';
+import { FBXLoader } from './FBXLoader.js';
 
 
 //data
@@ -23,6 +24,7 @@ scene.fog = new THREE.Fog(VARIABLES.backgroundColor, 1, 30);
 
 //house model
 let gltfModel;
+let originalModelPosY = 0;
 
 const loader = new GLTFLoader();
 
@@ -31,11 +33,12 @@ dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
 loader.setDRACOLoader( dracoLoader );
 
 
-loader.load('./../3dModels/cyberpunk_building/scene.gltf', function (gltf) {
+loader.load('./../3dModels/cyberpunk_building/room.glb', function (gltf) {
     gltfModel = gltf;
-    gltf.scene.scale.set(0.5, 0.5, 0.5);
-    gltf.scene.position.set(0.3, -1, 0);
+    gltf.scene.scale.set(1, 1, 1);
+    gltf.scene.position.set(0.3, -10, -5);
     scene.add(gltf.scene);
+    originalModelPosY = gltf.scene.position.y;
 }, undefined, function (error) {
     console.error(error);
 });
@@ -56,6 +59,7 @@ document.body.appendChild(renderer.domElement);
 
 
 //light
+
 const light1 = new THREE.PointLight(VARIABLES.leftLight, 1, 50);
 light1.intensity = 5;
 light1.position.set(20, 5, -5);
@@ -65,6 +69,11 @@ const light2 = new THREE.PointLight(VARIABLES.rightLight, 1, 50);
 light2.intensity = 5;
 light2.position.set(-20, 5, -5);
 scene.add(light2);
+
+const light3 = new THREE.PointLight("white",0, 0);
+light3.intensity = 5;
+light3.position.set(-20, 5, -5);
+scene.add(light3);
 
 //control
 camera.position.z = 5;
@@ -104,6 +113,9 @@ function addStars() {
 
 
 //movement control
+let moveSpeed = 0.01;
+let modelMaxPosY = 7;
+var canSpin = false;
 document.addEventListener("scroll", function (e) {
     for (const star of stars) {
         star.scrollY(window.scrollY - lastScrollPos);
@@ -111,8 +123,14 @@ document.addEventListener("scroll", function (e) {
 
     lastScrollPos = window.scrollY;
 
-});
+    gltfModel.scene.position.y = originalModelPosY + window.scrollY * moveSpeed;
 
+    if (gltfModel.scene.position.y > originalModelPosY + modelMaxPosY) {
+        gltfModel.scene.position.y = originalModelPosY + modelMaxPosY;
+        canSpin = true;
+    }
+
+});
 
 function animate() {
     requestAnimationFrame(animate);
@@ -122,12 +140,13 @@ function animate() {
         star.move();
     }
 
-    if (gltfModel) {
-        gltfModel.scene.rotation.y += 0.005;
+    if(canSpin){
+        gltfModel.scene.rotation.y += 0.01;
     }
-    
 
 }
+
+
 
 //moving lines
 // general setup, boring, skip to the next comment

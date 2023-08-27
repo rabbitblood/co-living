@@ -15,7 +15,9 @@ h2,.brand-name{
 body{
     background: #000;
     font-family: 'Noto Sans', sans-serif;
+    -webkit-text-stroke: 1px black;
 }
+
 
 #bg{
     position: fixed;
@@ -75,6 +77,7 @@ h2{
 
 p{
     z-index: 1;
+    font-weight: 700;
 }
 
 .content-title{
