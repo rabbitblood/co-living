@@ -3,12 +3,12 @@ import * as THREE from './three.module.js';
 export class star {
     constructor(scene) {
         this.geometry = new THREE.SphereGeometry(Math.random() * 1 + 0.5, 64, 64);
-        this.material = new THREE.MeshStandardMaterial({ color: "black" });
+        this.material = new THREE.MeshStandardMaterial({ color: "white" });
         this.star = new THREE.Mesh(this.geometry, this.material);
 
         this.originalx = Math.random() * 50 - 25;
         this.originaly = Math.random() * 40 - 20;
-        this.originalz = Math.random() * -60 - 10;
+        this.originalz = Math.random() * -50 - 10;
 
         this.destinationx;
         this.destinationy;

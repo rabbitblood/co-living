@@ -1,31 +1,51 @@
 import * as THREE from './three.module.js';
 import * as star from './star.js';
 import * as VARIABLES from './variables.js';
+import { GLTFLoader } from './GLTFLoader.js';
+import { DRACOLoader } from './DRACOLoader.js';
+
 
 //data
 let lastScrollPos = 0;
-let stars = [];
+let stars = []; 
 
 
 //elements
 const bg = document.querySelector('#bg');
-const profileText = document.querySelector('.profile-text');
-
 //scene
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(50, bg.clientWidth / bg.clientHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(50, bg.clientWidth / bg.clientHeight, 1, 1000);
 
+
+//fog
+scene.background = new THREE.Color(VARIABLES.backgroundColor);
+scene.fog = new THREE.Fog(VARIABLES.backgroundColor, 1, 30);
+
+//house model
+let gltfModel;
+
+const loader = new GLTFLoader();
+
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
+loader.setDRACOLoader( dracoLoader );
+
+
+loader.load('./../3dModels/cyberpunk_building/scene.gltf', function (gltf) {
+    gltfModel = gltf;
+    gltf.scene.scale.set(0.5, 0.5, 0.5);
+    gltf.scene.position.set(0.3, -1, 0);
+    scene.add(gltf.scene);
+}, undefined, function (error) {
+    console.error(error);
+});
 
 //texture
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load('./../image/hw.png');
 
 //material
 const materialBasic = new THREE.MeshBasicMaterial({ color: "#fbf665", wireframe: true });
 const materialStandard = new THREE.MeshStandardMaterial({ color: "#673147" });
-materialStandard.roughness = 0.5;
-materialStandard.normalMap = texture;
-
 
 
 const renderer = new THREE.WebGLRenderer({ canvas: bg });
@@ -37,13 +57,13 @@ document.body.appendChild(renderer.domElement);
 
 //light
 const light1 = new THREE.PointLight(VARIABLES.leftLight, 1, 50);
-light1.intensity = 100;
-light1.position.set(20, 5, 5);
+light1.intensity = 5;
+light1.position.set(20, 5, -5);
 scene.add(light1);
 
 const light2 = new THREE.PointLight(VARIABLES.rightLight, 1, 50);
-light2.intensity = 170;
-light2.position.set(-20, 5, 5);
+light2.intensity = 5;
+light2.position.set(-20, 5, -5);
 scene.add(light2);
 
 //control
@@ -101,6 +121,11 @@ function animate() {
     for (const star of stars) {
         star.move();
     }
+
+    if (gltfModel) {
+        gltfModel.scene.rotation.y += 0.005;
+    }
+    
 
 }
 

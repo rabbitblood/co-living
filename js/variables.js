@@ -1,5 +1,6 @@
 //neon back ground
 const starCount = 500;
+const backgroundColor = "#F89880";
 const leftLight = "#F89880"
 const rightLight = "#AA336A"
 
@@ -11,4 +12,4 @@ const rgbaAlphaRange = 1;
 
 
 
-export {starCount,leftLight, rightLight};
+export {starCount,leftLight, rightLight, backgroundColor, rgbaRedRange, rgbaGreenRange, rgbaBlueRange, rgbaAlphaRange};
