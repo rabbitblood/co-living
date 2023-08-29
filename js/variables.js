@@ -1,14 +1,14 @@
 //neon back ground
 const starCount = 500;
-const backgroundColor = "white";
+const backgroundColor = "black";
 const leftLight = "red"
-const rightLight = "violet"
+const rightLight = "pink"
 
 //rainbow bubble
-const rgbaRedRange = 0;
-const rgbaGreenRange = 100;
-const rgbaBlueRange = 100;
-const rgbaAlphaRange = 0.5;
+const rgbaRedRange = 255;
+const rgbaGreenRange = 0;
+const rgbaBlueRange = 0;
+const rgbaAlphaRange = 0.7;
 
 
 
