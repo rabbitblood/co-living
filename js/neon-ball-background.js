@@ -43,14 +43,6 @@ loader.load('./../3dModels/cyberpunk_building/room.glb', function (gltf) {
     console.error(error);
 });
 
-//texture
-const textureLoader = new THREE.TextureLoader();
-
-//material
-const materialBasic = new THREE.MeshBasicMaterial({ color: "#fbf665", wireframe: true });
-const materialStandard = new THREE.MeshStandardMaterial({ color: "#673147" });
-
-
 const renderer = new THREE.WebGLRenderer({ canvas: bg });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(bg.clientWidth, bg.clientHeight);
@@ -123,12 +115,13 @@ document.addEventListener("scroll", function (e) {
 
     lastScrollPos = window.scrollY;
 
-    gltfModel.scene.position.y = originalModelPosY + window.scrollY * moveSpeed;
+    // house model
+    // gltfModel.scene.position.y = originalModelPosY + window.scrollY * moveSpeed;
 
-    if (gltfModel.scene.position.y > originalModelPosY + modelMaxPosY) {
-        gltfModel.scene.position.y = originalModelPosY + modelMaxPosY;
-        canSpin = true;
-    }
+    // if (gltfModel.scene.position.y > originalModelPosY + modelMaxPosY) {
+    //     gltfModel.scene.position.y = originalModelPosY + modelMaxPosY;
+    //     canSpin = true;
+    // }
 
 });
 
