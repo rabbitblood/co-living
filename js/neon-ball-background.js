@@ -61,18 +61,18 @@ document.body.appendChild(renderer.domElement);
 //light
 
 const light1 = new THREE.PointLight(VARIABLES.leftLight, 1, 50);
-light1.intensity = 5;
-light1.position.set(20, 5, -5);
+light1.intensity = 2;
+light1.position.set(20, 2, -5);
 scene.add(light1);
 
 const light2 = new THREE.PointLight(VARIABLES.rightLight, 1, 50);
-light2.intensity = 5;
-light2.position.set(-20, 5, -5);
+light2.intensity = 2;
+light2.position.set(-20, -2, -5);
 scene.add(light2);
 
 const light3 = new THREE.PointLight("white",0, 0);
-light3.intensity = 5;
-light3.position.set(-20, 5, -5);
+light3.intensity = 0.4;
+light3.position.set(0, 0, -5);
 scene.add(light3);
 
 //control

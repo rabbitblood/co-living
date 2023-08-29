@@ -1,5 +1,4 @@
-//variables
-
+import {rgbaRedRange, rgbaGreenRange, rgbaBlueRange, rgbaAlphaRange} from "./variables.js"
 
 //canvas part
 document.querySelector("body").innerHTML += '<canvas \
@@ -86,7 +85,7 @@ function circle() {
         this.lastUpdate = Date.now();
         this.set_new_destination();
         this.move()
-        this.color = `rgba(${r() * 100 + 150},${r() * 100 + 90},${r() * 100 + 150},${1})`;
+        this.color = `rgba(${r() * rgbaRedRange},${r() * rgbaGreenRange},${r() * rgbaBlueRange},${rgbaAlphaRange})`;
     }
 
     this.move = function () {

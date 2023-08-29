@@ -4,6 +4,16 @@
 
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+canvas{
+    display: fixed;
+}
+
 h2,.brand-name{
     font-family: "Dogica";
 }
@@ -12,12 +22,12 @@ h2,.brand-name{
     margin: 0;
     padding: 0;
 }
+
 body{
     background: #000;
     font-family: 'Noto Sans', sans-serif;
     -webkit-text-stroke: 1px black;
 }
-
 
 #bg{
     position: fixed;
@@ -131,13 +141,13 @@ p{
 .brand-name{
     display: block;
     position: absolute;
-    top: 10vh;
+    top: 20vh;
     left: 5vw;
     font-size: 3em;
     font-weight: 900;
     color: #fff;
     transition: all 0.5s ease-in-out;
-    z-index: 1;
+    z-index: 10;
 }
 .form-container{
     top: 0;
@@ -242,6 +252,49 @@ form .submit-button{
     opacity: 0.85;
 }
 
+.open-menu-button{
+    display: block;
+    position: fixed;
+    top: 50px;
+    right: 5vw;
+    width: 50px;
+    height: 50px;
+    background: #a4e7fb;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    transition: all 0.5s ease-in-out;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    z-index: 15;
+    animation: floating 3s ease-in-out infinite;
+    animation-name: neon;
+}
+
+.open-menu-button-open{
+    transform: translate(0, 100%);
+}
+
+.menu{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 125px;
+    transition: all 0.5s ease-in-out;
+    transform: translate(0, -100%);
+    z-index: 10;
+}
+
+.menu-open{
+    transform: translate(0, 0);
+}
+
 /* floating effect for .brand-name and h1 */
 @keyframes floating {
     0% {
@@ -256,6 +309,27 @@ form .submit-button{
         transform: translateY(0px);
         transform: translateX(0px);
     }
+}
+.related-project{
+    max-width: 100px;
+    max-height: 100px;
+}
+.related-project-title{
+    position: relative;
+    font-size: medium;
+    z-index: 20;
+}
+.menu-item{
+    display: flex;
+    justify-content: center;
+}
+.menu-background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.7;
+    background: #000;
 }
 
 @keyframes floating-h1 {
@@ -276,6 +350,51 @@ form .submit-button{
         filter: hue-rotate(0deg);
     }
     100% {
-        filter: hue-rotate(-120deg);
+        filter: hue-rotate(360deg);
     }
 }
+
+@media (max-width: 500px) {
+    h2,.brand-name{
+        font-size: 1.5em;
+    }
+}
+
+/* image gallery */
+.tech-slideshow {
+    height: 200px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .tech-slideshow > div {
+    height: 200px;
+    width: 2526px;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+  }
+  .tech-slideshow .mover-1 {
+    animation: moveSlideshow 12s linear infinite;
+  }
+  .tech-slideshow .mover-2 {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    background-position: 0 -200px;
+    animation: moveSlideshow 15s linear infinite;
+  }
+  .tech-slideshow:hover .mover-2 {
+    opacity: 1;
+  }
+  
+  @keyframes moveSlideshow {
+    100% { 
+      transform: translateX(-66.6666%);  
+    }
+  }
