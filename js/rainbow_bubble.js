@@ -1,4 +1,4 @@
-import {rgbaRedRange, rgbaGreenRange, rgbaBlueRange, rgbaAlphaRange} from "./variables.js"
+import { rgbaRedRange, rgbaGreenRange, rgbaBlueRange, rgbaAlphaRange } from "./variables.js"
 
 //canvas part
 document.querySelector("body").innerHTML += '<canvas \
@@ -13,7 +13,6 @@ const plusOrMinus = function () { return Math.random() < 0.5 ? -1 : 1; }
 const c = canvas.getContext("2d");
 let mouse_pos_x;
 let mouse_pos_y;
-
 
 init();
 

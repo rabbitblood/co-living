@@ -1,3 +1,5 @@
+
+
 //elements
 const contents = document.querySelectorAll('.content');
 
@@ -34,6 +36,55 @@ document.addEventListener("scroll", function (e) {
 });
 
 
-/*
-  -- Start Rolling --
-*/
+//image rolling horizontal
+class RollingImage {
+  image;
+  imgScroll;
+  constructor(image) {
+    this.imgScroll = 0;
+    this.image = image;
+  }
+
+}
+const imageRoot = "./../image/life/";
+const imageCount = 2;
+const imageList = [];
+const imagesContainer = document.querySelector('.life-pics');
+const imageWidth = 500;
+let currentWidth = 0;
+let currentScroll = 0;
+let moveSpeed = 1;
+let currentGeneratingImage = 1;
+
+function InfiniteImageRolling() {
+  while (currentWidth < window.innerWidth + (imageWidth * 2)) {
+    if (currentGeneratingImage > imageCount) {
+      currentGeneratingImage = 1;
+    }
+
+    const img = document.createElement('img');
+    img.src = imageRoot + currentGeneratingImage + ".jpg";
+    img.classList.add('life-pic');
+    imagesContainer.appendChild(img);
+    let rollingImage = new RollingImage(img);
+    rollingImage.imgScroll = currentWidth - imageWidth;
+    imageList.push(rollingImage);
+
+    currentGeneratingImage++;
+    currentWidth += imageWidth;
+  }
+
+  for (const img of imageList) {
+    img.imgScroll -= moveSpeed;
+    img.image.style.transform = "translateX(" + img.imgScroll + "px)";
+    if (img.imgScroll < -imageWidth * 2) {
+      imagesContainer.removeChild(img.image);
+      imageList.splice(imageList.indexOf(img), 1);
+      currentWidth -= imageWidth;
+    }
+  }
+}
+
+setInterval(() => {
+  requestAnimationFrame(InfiniteImageRolling);
+}, 1);

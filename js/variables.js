@@ -11,5 +11,4 @@ const rgbaBlueRange = 0;
 const rgbaAlphaRange = 0.7;
 
 
-
 export { starCount, leftLight, rightLight, backgroundColor, rgbaRedRange, rgbaGreenRange, rgbaBlueRange, rgbaAlphaRange };
