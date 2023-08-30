@@ -1,5 +1,5 @@
 //neon back ground
-const starCount = 500;
+const starCount = 200;
 const backgroundColor = "black";
 const leftLight = "red"
 const rightLight = "pink"

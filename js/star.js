@@ -9,7 +9,7 @@ export class star {
 
         this.originalx = Math.random() * 50 - 25;
         this.originaly = Math.random() * 40 - 20;
-        this.originalz = Math.random() * -50 - 10;
+        this.originalz = -Math.random() * 20 -10;
 
         this.destinationx;
         this.destinationy;
