@@ -47,7 +47,7 @@ class RollingImage {
 
 }
 const imageRoot = "./../image/life/";
-const imageCount = 2;
+const imageCount = 6;
 const imageList = [];
 const imagesContainer = document.querySelector('.life-pics');
 const imageWidth = 500;
