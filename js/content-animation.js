@@ -57,7 +57,7 @@ let moveSpeed = 1;
 let currentGeneratingImage = 1;
 
 function InfiniteImageRolling() {
-  while (currentWidth < window.innerWidth + (imageWidth * 2)) {
+  while (currentWidth < window.innerWidth + (imageWidth * 6)) {
     if (currentGeneratingImage > imageCount) {
       currentGeneratingImage = 1;
     }
