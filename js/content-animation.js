@@ -113,3 +113,11 @@ function BgCityAnimation() {
   //console.log(window.scrollY / (document.body.offsetHeight - window.innerHeight));
   bgCity.style.transform = `translateY(${100 - ((window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100)}%)`;
 }
+
+//audio control
+const bgMusic = document.querySelector('#bg-music');
+addEventListener("click", function () {
+  if (bgMusic.paused) {
+    bgMusic.play();
+  }
+});
