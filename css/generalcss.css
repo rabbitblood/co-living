@@ -56,7 +56,7 @@ a{
     font-weight: 700;
     color: white;
     text-align: center;
-    margin-top: 50vh;
+    margin-top: 30vh;
     transition: all 0.5s ease-in-out;
     translate: translateY(-50%);
     animation: floating-h1 3s ease-in-out infinite;
@@ -100,7 +100,7 @@ p{
 }
 
 .content{
-    margin: 50vh auto;
+    margin: 30vh auto;
     margin-bottom: 10vh;
     transition: all 0.5s ease-in-out;
     z-index: 1;
