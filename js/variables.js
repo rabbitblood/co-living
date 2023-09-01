@@ -1,7 +1,7 @@
 //neon back ground
 const starCount = 30;
 const backgroundColor = "black";
-const leftLight = "red"
+const leftLight = "cyan"
 const rightLight = "pink"
 
 //rainbow bubble

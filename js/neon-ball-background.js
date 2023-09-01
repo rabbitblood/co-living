@@ -14,14 +14,21 @@ let stars = [];
 const bg = document.querySelector('#bg');
 
 //scene
-const textureLoader = new THREE.TextureLoader();
+const textureLoader = new THREE.CubeTextureLoader();
 const scene = new THREE.Scene();
-//scene.background = textureLoader.load("./../image/b2.jpeg");
+scene.background = textureLoader.load( [
+    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
+    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
+    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
+    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
+    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
+    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png'
+] );
 const camera = new THREE.PerspectiveCamera(50, bg.clientWidth / bg.clientHeight, 1, 1000);
 
 //fog
 //scene.background = new THREE.Color(VARIABLES.backgroundColor);
-scene.fog = new THREE.Fog(VARIABLES.backgroundColor, 0, 40);
+//scene.fog = new THREE.Fog(VARIABLES.backgroundColor, 0, 40);
 
 //house model
 let gltfModel;

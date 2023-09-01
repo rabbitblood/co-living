@@ -4,7 +4,7 @@ export class star {
     constructor(scene) {
         this.geometry = new THREE.SphereGeometry(Math.random() * 1 + 0.5, 64, 64);
         this.material = new THREE.MeshToonMaterial({ color: "white" });
-        this.material.opacity = 0.5;
+        this.material.opacity = 0.2;
         this.star = new THREE.Mesh(this.geometry, this.material);
 
         this.originalx = Math.random() * 50 - 25;
