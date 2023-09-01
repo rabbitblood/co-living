@@ -85,6 +85,14 @@ function InfiniteImageRolling() {
   }
 }
 
-setInterval(() => {
-  requestAnimationFrame(InfiniteImageRolling);
-}, 1);
+if (imagesContainer) {
+  //preload image
+  for (let i = 1; i <= imageCount; i++) {
+    const img = document.createElement('img');
+    img.src = imageRoot + i + ".jpg";
+  }
+
+  setInterval(() => {
+    requestAnimationFrame(InfiniteImageRolling);
+  }, 1);
+}

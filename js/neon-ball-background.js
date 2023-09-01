@@ -1,8 +1,6 @@
 import * as THREE from './three.module.js';
 import * as star from './star.js';
 import * as VARIABLES from './variables.js';
-import { GLTFLoader } from './GLTFLoader.js';
-import { DRACOLoader } from './DRACOLoader.js';
 
 
 //data
@@ -34,22 +32,7 @@ const camera = new THREE.PerspectiveCamera(50, bg.clientWidth / bg.clientHeight,
 let gltfModel;
 let originalModelPosY = 0;
 
-const loader = new GLTFLoader();
 
-const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
-loader.setDRACOLoader( dracoLoader );
-
-
-loader.load('./../3dModels/cyberpunk_building/room.glb', function (gltf) {
-    gltfModel = gltf;
-    gltf.scene.scale.set(1, 1, 1);
-    gltf.scene.position.set(0.3, -10, -5);
-    scene.add(gltf.scene);
-    originalModelPosY = gltf.scene.position.y;
-}, undefined, function (error) {
-    console.error(error);
-});
 
 const renderer = new THREE.WebGLRenderer({ canvas: bg });
 renderer.setPixelRatio(window.devicePixelRatio);
