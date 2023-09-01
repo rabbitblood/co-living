@@ -13,14 +13,16 @@ let stars = [];
 
 //elements
 const bg = document.querySelector('#bg');
+
 //scene
+const textureLoader = new THREE.TextureLoader();
 const scene = new THREE.Scene();
+scene.background = textureLoader.load("./../image/b2.jpeg");
 const camera = new THREE.PerspectiveCamera(50, bg.clientWidth / bg.clientHeight, 1, 1000);
 
-
 //fog
-scene.background = new THREE.Color(VARIABLES.backgroundColor);
-scene.fog = new THREE.Fog(VARIABLES.backgroundColor, 1, 30);
+//scene.background = new THREE.Color(VARIABLES.backgroundColor);
+//scene.fog = new THREE.Fog(VARIABLES.backgroundColor, 1, 30);
 
 //house model
 let gltfModel;
@@ -51,26 +53,23 @@ document.body.appendChild(renderer.domElement);
 
 
 //light
-
 const light1 = new THREE.PointLight(VARIABLES.leftLight, 1, 50);
-light1.intensity = 2;
+light1.intensity = 1;
 light1.position.set(20, 2, -5);
 scene.add(light1);
 
 const light2 = new THREE.PointLight(VARIABLES.rightLight, 1, 50);
-light2.intensity = 2;
+light2.intensity = 1;
 light2.position.set(-20, -2, -5);
 scene.add(light2);
 
-const light3 = new THREE.PointLight("white",0, 0);
-light3.intensity = 0.4;
-light3.position.set(0, 0, -5);
-scene.add(light3);
+// const light3 = new THREE.PointLight("white",0, 0);
+// light3.intensity = 0.4;
+// light3.position.set(0, 0, -5);
+// scene.add(light3);
 
 //control
 camera.position.z = 5;
-
-
 
 //canvas responsive when window resize
 window.addEventListener('resize', function () {
