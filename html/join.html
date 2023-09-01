@@ -3,12 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="./../image/favicon.ico" />
     <title>Cyberspace Colab | Submit Application</title>
     <script type="module" src="./../js/rainbow_bubble.js" defer></script>
     <script type="module" src="./../js/neon-ball-background.js" defer></script>
+    <script type="module" src="./../js/content-animation.js" defer></script>
     <link rel="stylesheet" href="./../css/generalcss.css" />
   </head>
   <body>
+    <header>
+      <nav class="menu">
+        <div class="open-menu-button">⌄</div>
+        <div class="menu-background"></div>
+        <div class="menu-item">
+          <a class="menu-link" href="./index.html"> Home </a>
+        </div>
+        <div class="menu-item">
+          <a class="menu-link" href="./whitepaper.html"> White Paper </a>
+        </div>
+        <div class="menu-item">
+          <a class="menu-link" href="./related_project.html">
+            Related Projects
+          </a>
+        </div>
+      </nav>
+      <audio id="bg-music" src="./../music/background.mp3" loop="loop"></audio>
+    </header>
     <canvas id="bg"></canvas>
     <div class="form-container">
       <form
