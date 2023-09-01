@@ -13,14 +13,15 @@ const bg = document.querySelector('#bg');
 
 //scene
 const textureLoader = new THREE.CubeTextureLoader();
+const textureUrl ="./../image/b2.png";
 const scene = new THREE.Scene();
 scene.background = textureLoader.load( [
-    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
-    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
-    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
-    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
-    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png',
-    'https://cdn.midjourney.com/5fe44796-1396-4277-80d7-d1f7b2625aa3/0_0.png'
+    textureUrl,
+    textureUrl,
+    textureUrl,
+    textureUrl,
+    textureUrl,
+    textureUrl
 ] );
 const camera = new THREE.PerspectiveCamera(50, bg.clientWidth / bg.clientHeight, 1, 1000);
 

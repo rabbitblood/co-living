@@ -1,13 +1,11 @@
 
-
-//elements
+//menu button
 const contents = document.querySelectorAll('.content');
 
 const menuButton = document.querySelector('.open-menu-button');
 const menu = document.querySelector('.menu');
 let menuOpen = false;
 
-//menu button
 menuButton.addEventListener('click', () => {
   if (!menuOpen) {
     menu.classList.add('menu-open');
@@ -95,4 +93,23 @@ if (imagesContainer) {
   setInterval(() => {
     requestAnimationFrame(InfiniteImageRolling);
   }, 1);
+}
+
+//bg city
+const bgCity = document.querySelector('.bg-city');
+
+if (bgCity) {
+  setInterval(() => {
+    requestAnimationFrame(BgCityAnimation);
+  }, 1);
+}
+
+function BgCityAnimation() {
+  // window.scrollY = current scroll position, start from 0
+  // window.innerHeight = height of the window
+  // document.body.offsetHeight = height of the document
+
+  //bgCity will move from bottom to top based on scroll position
+  //console.log(window.scrollY / (document.body.offsetHeight - window.innerHeight));
+  bgCity.style.transform = `translateY(${100 - ((window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100)}%)`;
 }

@@ -8,7 +8,10 @@ img{
     max-width: 100%;
     height: auto;
 }
-
+p{
+    position: relative;
+    z-index: inherit;
+}
 
 canvas{
     display: fixed;
@@ -82,13 +85,14 @@ h1, h2{
     transition: all 0.5s ease-in-out;
     max-width: 1000px;
     margin: 0 auto;
+    z-index: inherit;
 }
 
 .content-container{
     position: relative;
     text-align: center;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
 }
 
 p{
@@ -102,10 +106,11 @@ p{
 }
 
 .content{
+    position: relative;
     margin: 20vh auto;
     margin-bottom: 10vh;
     transition: all 0.5s ease-in-out;
-    z-index: 1;
+    z-index: 2;
 }
 
 .content-img{
@@ -339,7 +344,6 @@ form .submit-button{
     position: fixed;
     width: 100%;
     height: 100%;
-
     opacity: 1;
     background: #000;
 }
@@ -360,6 +364,20 @@ form .submit-button{
     max-width: 500px;
     height: 500px;
     object-fit: cover;
+}
+
+.low-z-index{
+    z-index: 0;
+}
+
+.bg-city{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 100%);
+    width: 100vw;
+    pointer-events: none;
+    z-index: 1;
 }
 @keyframes floating-h1 {
     0% {
