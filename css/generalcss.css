@@ -430,3 +430,19 @@ form .submit-button {
 .text-color-change:hover {
   background-color: #2b07f2;
 }
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    z-index: 5;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#medias{
+}
+
+#medias li{
+    display: inline-block;
+}
