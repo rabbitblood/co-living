@@ -115,9 +115,9 @@ function BgCityAnimation() {
 }
 
 //audio control
-const bgMusic = document.querySelector('#bg-music');
-addEventListener("click", function () {
-  if (bgMusic.paused) {
-    bgMusic.play();
-  }
-});
+// const bgMusic = document.querySelector('#bg-music');
+// addEventListener("click", function () {
+//   if (bgMusic.paused) {
+//     bgMusic.play();
+//   }
+// });
