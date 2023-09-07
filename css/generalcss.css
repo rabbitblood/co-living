@@ -410,25 +410,18 @@ form .submit-button {
 }
 
 @media (min-width: 900px){
-    h2,
-    .brand-name {
+    h2{
         left: 10px;
         font-size: 1.5em;
     }
 
-    .brand-name{
-        top: 10px;
-        position: fixed;
-        display: block;
-        z-index: 100;
-      }
       .open-menu-button{
         display: none;
       }  
       .menu {
         display: flex;
         position: fixed;
-        justify-content: right;
+        justify-content: center;
         height: auto;
         transform: translate(0,0);
       }
