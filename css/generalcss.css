@@ -319,17 +319,32 @@ form .submit-button {
     transform: translateX(0px);
   }
 }
+.menu-link-background{
+}
+
+
 .menu-link {
   padding: 5px;
-  background-color: rgb(237, 252, 255);
   width: 50%;
+  background-color: white;
   text-align: center;
+  border: solid black;
   border-radius: 10px;
-  color: #000;
+  color: black;
   font-weight: bold;
   margin: 5px;
-  opacity: 0.95;
+  opacity: 0.9;
+
 }
+
+.menu-link:hover {
+  background-color: #2b07f2;
+  color: white;
+  border: solid #2b07f2;
+  border-radius: 10px;
+  opacity: 1;
+}
+
 .related-project-title {
   position: relative;
   font-size: medium;
@@ -345,7 +360,7 @@ form .submit-button {
   position: fixed;
   width: 100%;
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.5;
   background: #000;
 }
 .life-pics {
@@ -477,5 +492,8 @@ footer{
 @media (min-width: 800px) {
   .btn-wrapper{
     flex-direction: row;
+  }
+  .menu-background{
+    display: none;
   }
 }
