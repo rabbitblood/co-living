@@ -32,7 +32,13 @@ body {
   background: #000;
   font-family: "Noto Sans", sans-serif;
 }
-
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
 p,
 h1,
 h2 {
@@ -266,37 +272,31 @@ form .submit-button {
 }
 
 .open-menu-button {
-  display: block;
+  display: none;
   position: fixed;
-  bottom: -10px;
+  top: 10px;
   right: 5vw;
   width: 50px;
   height: 50px;
-  background: #a4e7fb;
   color: #000;
   font-size: 1.5em;
   font-weight: 700;
   text-align: center;
   line-height: 50px;
   border-radius: 50%;
-  border: 2px solid #000;
   transition: all 0.5s ease-in-out;
-  transform: translate(0, 100%);
   cursor: pointer;
-  z-index: -5;
-  animation: floating 3s ease-in-out infinite;
-  animation-name: neon;
+  z-index: 5;
 }
 
 .menu {
-  display: block;
+  display: flex;
+  justify-content: center;
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
-  height: fit-content;
   transition: all 0.5s ease-in-out;
-  transform: translate(0, -100%);
   z-index: 10;
 }
 
@@ -319,29 +319,20 @@ form .submit-button {
     transform: translateX(0px);
   }
 }
-.menu-link-background{
+.menu-link-background {
 }
-
 
 .menu-link {
   padding: 5px;
   width: 50%;
-  background-color: white;
   text-align: center;
-  border: solid black;
-  border-radius: 10px;
   color: black;
   font-weight: bold;
   margin: 5px;
-  opacity: 0.9;
-
 }
 
 .menu-link:hover {
-  background-color: #2b07f2;
   color: white;
-  border: solid #2b07f2;
-  border-radius: 10px;
   opacity: 1;
 }
 
@@ -357,10 +348,10 @@ form .submit-button {
   margin: 10px;
 }
 .menu-background {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
   background: #000;
 }
 .life-pics {
@@ -424,35 +415,41 @@ form .submit-button {
   }
 }
 
-@media (min-width: 900px){
-    h2{
-        left: 10px;
-        font-size: 1.5em;
-    }
+@media (min-width: 900px) {
+  h2 {
+    left: 10px;
+    font-size: 1.5em;
+  }
 
-      .open-menu-button{
-        display: none;
-      }  
-      .menu {
-        display: flex;
-        position: fixed;
-        justify-content: center;
-        height: auto;
-        transform: translate(0,0);
-      }
-      .menu-link {
-        margin-top: 0;
-        padding: 10px;
-        width: 150px;
-        text-align: center;
-        border-radius: 10px;
-      }
+  .open-menu-button {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    position: fixed;
+    transform: translate(0, 0);
+  }
+
+  .menu-link {
+    margin-top: 0;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .btn-wrapper {
+    flex-direction: row;
+  }
+  .menu-background {
+    display: none;
+  }
 }
-@media (min-width: 1150px){
-    h2,
-    .brand-name {
-      font-size: 3em;
-    }
+@media (min-width: 1150px) {
+  h2,
+  .brand-name {
+    font-size: 3em;
+  }
 }
 
 .text-color-change {
@@ -462,38 +459,28 @@ form .submit-button {
   background-color: #2b07f2;
 }
 
-footer{
-    text-align: center;
-    font-weight: bold;
-    position: relative;
-    z-index: 5;
-    color: white;
+footer {
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  color: white;
 }
 
-#medias{
+#medias {
 }
 
-#medias li{
-    display: inline-block;
+#medias li {
+  display: inline-block;
 }
 
-.btn-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    position: relative;
-    z-index: 6;
-    margin-bottom: 30vh;
-}
-
-
-@media (min-width: 800px) {
-  .btn-wrapper{
-    flex-direction: row;
-  }
-  .menu-background{
-    display: none;
-  }
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+  z-index: 6;
+  margin-bottom: 30vh;
 }
